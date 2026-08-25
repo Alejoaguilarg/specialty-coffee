@@ -14,3 +14,9 @@ include ':usecase'
 project(':app-service').projectDir = file('./applications/app-service')
 project(':model').projectDir = file('./domain/model')
 project(':usecase').projectDir = file('./domain/usecase')
+include ':in-memory-inventory'
+project(':in-memory-inventory').projectDir = file('./infrastructure/driven-adapters/in-memory-inventory')
+include ':in-memory-order'
+project(':in-memory-order').projectDir = file('./infrastructure/driven-adapters/in-memory-order')
+include ':api-rest'
+project(':api-rest').projectDir = file('./infrastructure/entry-points/api-rest')

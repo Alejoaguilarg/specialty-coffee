@@ -1,6 +1,9 @@
 package co.com.specialtycoffee.config;
 
+import co.com.specialtycoffee.model.gateway.InventoryPort;
+import co.com.specialtycoffee.model.gateway.OrderRepositoryPort;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,8 +34,13 @@ public class UseCasesConfigTest {
     static class TestConfig {
 
         @Bean
-        public MyUseCase myUseCase() {
-            return new MyUseCase();
+        public InventoryPort inventoryPort() {
+            return Mockito.mock(InventoryPort.class);
+        }
+
+        @Bean
+        public OrderRepositoryPort orderRepositoryPort() {
+            return Mockito.mock(OrderRepositoryPort.class);
         }
     }
 
